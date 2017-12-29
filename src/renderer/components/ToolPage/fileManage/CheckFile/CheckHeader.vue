@@ -1,7 +1,7 @@
 <template>
   <div class="checkFileHeader">
     <div class="title">文件查看</div>
-    <div class="curPath">///////</div>
+    <div class="curPath">{{curPath ==  "" ? "我的电脑" : curPath.split("/").pop()}}</div>
   </div>
 </template>
 
@@ -17,6 +17,7 @@
 
     },
     computed: {
+      ...mapState('CheckFileState',['curPath'])
     }
   }
 </script>
